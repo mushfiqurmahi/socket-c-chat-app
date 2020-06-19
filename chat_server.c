@@ -55,7 +55,7 @@ int main(int argc, char* argv[])
 		//receive data from client
 		n = read(client_socket, buffer, 256);
 		if (n < 0) error("ERROR reading from socket");
-		printf("[CLIENT]: %s\n", buffer);
+		printf("[CLIENT]: %s\nMessage: ", buffer);
 		
 		//sending
 		bzero(buffer, 256); //clean previous mssgs

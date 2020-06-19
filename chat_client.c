@@ -63,7 +63,7 @@ int main(int argc, char* argv[])
 		n = read(client_socket, buffer, 256);//rcving data
 		if (n < 0) 
          		error("ERROR reading from socket");
-         	printf("Server : %s\n",buffer);
+         	printf("Server : %s\nMessage :",buffer);
          	
          	//code for breaking loop
          	int i = strncmp("quit" , buffer , 4);
