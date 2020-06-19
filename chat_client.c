@@ -46,7 +46,7 @@ int main(int argc, char* argv[])
 		//send
 		bzero(buffer, 256); //clearing prev mssg;
 		fgets(buffer, 256, stdin);//getting mssg from cosole
-		write(client_socket, buffer, strlen(buffer))/;/sending data
+		write(client_socket, buffer, strlen(buffer));//sending data
 		
 		//recving
 		bzero(buffer, 256); //clearing prev mssg;
@@ -54,4 +54,5 @@ int main(int argc, char* argv[])
 	}
 	
 	close(client_socket);
+	return 0;
 }
