@@ -28,7 +28,7 @@ int main(int argc, char* argv[])
 	
 	client_socket = socket(AF_INET, SOCK_STREAM, 0);
 	if (client_socket < 0) 
-        e	rror("ERROR opening socket");
+        	error("ERROR opening socket");
 	
 	server = gethostbyname(argv[1]);
 	if (server == NULL)
@@ -56,7 +56,7 @@ int main(int argc, char* argv[])
 		n = write(client_socket, buffer, strlen(buffer));//sending data
 		if (n < 0) 
              		error("ERROR writing to socket");
-             	printf("[SENT]");
+             	printf("[SENT]\n");
 		
 		//recving
 		bzero(buffer, 256); //clearing prev mssg;
@@ -66,7 +66,7 @@ int main(int argc, char* argv[])
          	printf("Server : %s\n",buffer);
          	
          	//code for breaking loop
-         	int i = strncmp("quit" , buffer , 5);
+         	int i = strncmp("quit" , buffer , 4);
         	if(i == 0)
                		break;
 	}

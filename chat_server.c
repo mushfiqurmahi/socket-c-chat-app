@@ -41,7 +41,8 @@ int main(int argc, char* argv[])
 	printf("[LISTENING]\n");
 	
 	//accept any connection and save the client address
-	int client_socket = accept(server_socket, (struct sockaddr*) &client_addr, sizeof(client_addr));
+	//int client_socket = accept(server_socket, (struct sockaddr*) &client_addr, sizeof(client_addr));
+	int client_socket = accept(server_socket, NULL, NULL);
 	if (client_socket < 0) 
          	error("ERROR on accept");
 	
@@ -63,7 +64,7 @@ int main(int argc, char* argv[])
 		if (n < 0) error("ERROR writing to socket");
 		
 		//logic when to quit connection
-		if( (strncmp("quit", buffer, 5)) == 0 )
+		if( (strncmp("quit", buffer, 4)) == 0 )
 			break;
 	}
 	
